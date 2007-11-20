@@ -1,19 +1,18 @@
-%define oname xfce4-taskmanager
-
-Summary:	A small taskmanager for Xfce
-Name:		xfce-taskmanager
+Summary:	A small taskmanager for Xfce desktop environment
+Name:		xfce4-taskmanager
 Version:	0.3.2
 Release:	%mkrel 6
-License:	BSD
+License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		http://goodies.xfce.org/projects/applications/xfce4-taskmanager
-Source0:	http://goodies.xfce.org/releases/xfce4-taskmanager/%{oname}-%{version}.tar.bz2
-Source1:	%{oname}.desktop
+Source0:	http://goodies.xfce.org/releases/xfce4-taskmanager/%{name}-%{version}.tar.bz2
+Source1:	%{name}.desktop
 # http://www.xfce.org/images/projects/library.png
-Source2:	%{oname}.png
+Source2:	%{name}.png
 BuildRequires:	gdk-pixbuf-devel >= 0.22.0
 BuildRequires:	libxfcegui4-devel
 BuildRequires:	perl(XML::Parser)
+Obsoletes:	xfce-taskmanager
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
@@ -28,7 +27,7 @@ Features:
     - KILL
 
 %prep
-%setup -qn %{oname}-%{version}
+%setup -q
 
 %build
 %configure2_5x
@@ -43,7 +42,7 @@ mkdir -p %{buildroot}%{_iconsdir}/hicolor/48x48/apps
 install -m 644 %{SOURCE1} %{buildroot}%{_datadir}/applications
 install -m 644 %{SOURCE2} %{buildroot}%{_iconsdir}/hicolor/48x48/apps
 
-%find_lang %{oname}
+%find_lang %{name}
 
 %post
 %{update_menus}
@@ -56,9 +55,9 @@ install -m 644 %{SOURCE2} %{buildroot}%{_iconsdir}/hicolor/48x48/apps
 %clean
 rm -rf %{buildroot}
 
-%files -f %{oname}.lang
+%files -f %{name}.lang
 %defattr(-,root,root)
-%doc AUTHORS COPYING NEWS README
+%doc AUTHORS ChangeLog README
 %{_bindir}/*
-%{_datadir}/applications/%{oname}.desktop
+%{_datadir}/applications/%{name}.desktop
 %{_iconsdir}/hicolor/48x48/apps/xfce4-taskmanager.png
