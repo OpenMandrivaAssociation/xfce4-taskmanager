@@ -1,15 +1,11 @@
-%define nversion 0.4.0
-%define releasec rc2
-%define realversion %{nversion}%{releasec}
-
 Summary:	A small taskmanager for Xfce desktop environment
 Name:		xfce4-taskmanager
-Version:	%{realversion}
+Version:	0.4.0
 Release:	%mkrel 1
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		http://goodies.xfce.org/projects/applications/xfce4-taskmanager
-Source0:	http://goodies.xfce.org/releases/xfce4-taskmanager/%{name}-%{nversion}-%{releasec}.tar.bz2
+Source0:	http://goodies.xfce.org/releases/xfce4-taskmanager/%{name}-%{version}.tar.bz2
 Source1:	%{name}.desktop
 # http://www.xfce.org/images/projects/library.png
 Source2:	%{name}.png
@@ -31,7 +27,7 @@ Features:
     - KILL
 
 %prep
-%setup -q -n %{name}-%{nversion}-%{releasec}
+%setup -q
 
 %build
 %configure2_5x
