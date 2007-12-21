@@ -13,6 +13,7 @@ BuildRequires:	gdk-pixbuf-devel >= 0.22.0
 BuildRequires:	libxfcegui4-devel
 BuildRequires:	perl(XML::Parser)
 Obsoletes:	xfce-taskmanager
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 xfce-taskmanager is a small taskmanager based on the Xfce libraries.
