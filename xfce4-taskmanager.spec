@@ -37,7 +37,6 @@ rm -rf %{buildroot}
 %makeinstall_std
 
 mkdir -p %{buildroot}%{_datadir}/applications
-mkdir -p %{buildroot}%{_iconsdir}/hicolor/48x48/apps
 install -m 644 %{SOURCE1} %{buildroot}%{_datadir}/applications
 
 %find_lang %{name}
