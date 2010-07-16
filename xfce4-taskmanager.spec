@@ -1,14 +1,16 @@
+%define url_ver %(echo %{version} | cut -c 1-3)
+
 Summary:	A small taskmanager for Xfce desktop environment
 Name:		xfce4-taskmanager
-Version:	0.4.1
-Release:	%mkrel 5
+Version:	1.0.0
+Release:	%mkrel 1
 Epoch:		1
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		http://goodies.xfce.org/projects/applications/xfce4-taskmanager
-Source0:	http://goodies.xfce.org/releases/xfce4-taskmanager/%{name}-%{version}.tar.bz2
-BuildRequires:	gdk-pixbuf-devel >= 0.22.0
-BuildRequires:	libxfcegui4-devel
+Source0:	http://archive.xfce.org/src/apps/xfce4-taskmanager/%{url_ver}/%{name}-%{version}.tar.bz2
+BuildRequires:	libwnck-devel
+BuildRequires:	intltool
 BuildRequires:	perl(XML::Parser)
 Requires:	xfdesktop
 Obsoletes:	xfce-taskmanager
@@ -29,7 +31,10 @@ Features:
 %setup -q
 
 %build
-%configure2_5x
+%configure2_5x \
+	--with-skel \
+	--enable-wnck
+
 %make
 
 %install
