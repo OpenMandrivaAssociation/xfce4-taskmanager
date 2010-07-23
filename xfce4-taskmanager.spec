@@ -3,7 +3,7 @@
 Summary:	A small taskmanager for Xfce desktop environment
 Name:		xfce4-taskmanager
 Version:	1.0.0
-Release:	%mkrel 1
+Release:	%mkrel 2
 Epoch:		1
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
@@ -32,7 +32,6 @@ Features:
 
 %build
 %configure2_5x \
-	--with-skel \
 	--enable-wnck
 
 %make
