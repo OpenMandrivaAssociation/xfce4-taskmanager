@@ -3,7 +3,7 @@
 Summary:	A small taskmanager for Xfce desktop environment
 Name:		xfce4-taskmanager
 Version:	1.0.0
-Release:	%mkrel 4
+Release:	5
 Epoch:		1
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
@@ -14,7 +14,6 @@ BuildRequires:	intltool
 BuildRequires:	perl(XML::Parser)
 Requires:	xfdesktop
 Obsoletes:	xfce-taskmanager
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 xfce-taskmanager is a small taskmanager based on the Xfce libraries.
@@ -37,28 +36,11 @@ Features:
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
-%find_lang %{name}
-
-%if %mdkversion < 200900
-%post
-%{update_menus}
-%update_icon_cache hicolor
-%endif
-
-%if %mdkversion < 200900
-%postun
-%{clean_menus}
-%clean_icon_cache hicolor
-%endif
-
-%clean
-rm -rf %{buildroot}
+%find_lang %{name} %{name}.lang
 
 %files -f %{name}.lang
-%defattr(-,root,root)
 %doc AUTHORS ChangeLog README
 %{_bindir}/*
 %{_datadir}/applications/%{name}.desktop
