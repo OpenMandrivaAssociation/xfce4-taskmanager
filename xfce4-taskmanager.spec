@@ -3,7 +3,7 @@
 Summary:	A small taskmanager for Xfce desktop environment
 Name:		xfce4-taskmanager
 Version:	1.0.0
-Release:	8
+Release:	9
 Epoch:		1
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
