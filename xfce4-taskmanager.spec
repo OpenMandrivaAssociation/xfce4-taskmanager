@@ -2,7 +2,7 @@
 
 Summary:	A small taskmanager for Xfce desktop environment
 Name:		xfce4-taskmanager
-Version:	1.0.1
+Version:	1.1.0
 Release:	1
 Epoch:		1
 License:	GPLv2+
@@ -30,7 +30,7 @@ Features:
 %setup -q
 
 %build
-%configure2_5x \
+%configure \
 	--enable-wnck
 
 %make
