@@ -1,9 +1,10 @@
-%define url_ver %(echo %{version} | cut -c 1-3)
+%define url_ver %(echo %{version} | cut -d . -f 1,2)
+%define _disable_rebuild_configure 1
 
 Summary:	A small taskmanager for Xfce desktop environment
 Name:		xfce4-taskmanager
-Version:	1.1.0
-Release:	3
+Version:	1.2.0
+Release:	1
 Epoch:		1
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
@@ -44,3 +45,4 @@ Features:
 %doc AUTHORS ChangeLog README
 %{_bindir}/*
 %{_datadir}/applications/%{name}.desktop
+%{_datadir}/icons/hicolor/*/*/xc_crosshair.*
