@@ -51,3 +51,5 @@ Features:
 %{_bindir}/*
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/*/xc_crosshair.*
+%{_iconsdir}/hicolor/*x*/apps/org.xfce.taskmanager.png
+%{_iconsdir}/hicolor/scalable/apps/org.xfce.taskmanager.svg
