@@ -7,7 +7,7 @@ Version:	1.5.7
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
-URL:		http://goodies.xfce.org/projects/applications/xfce4-taskmanager
+URL:		https://goodies.xfce.org/projects/applications/xfce4-taskmanager
 Source0:	http://archive.xfce.org/src/apps/xfce4-taskmanager/%{url_ver}/%{name}-%{version}.tar.bz2
 BuildRequires:	pkgconfig(exo-2)
 BuildRequires:	pkgconfig(libxfce4ui-2) 
