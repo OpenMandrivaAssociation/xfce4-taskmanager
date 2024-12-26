@@ -3,12 +3,12 @@
 
 Summary:	A small taskmanager for Xfce desktop environment
 Name:		xfce4-taskmanager
-Version:	1.5.7
+Version:	1.5.8
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		https://goodies.xfce.org/projects/applications/xfce4-taskmanager
-Source0:	http://archive.xfce.org/src/apps/xfce4-taskmanager/%{url_ver}/%{name}-%{version}.tar.bz2
+Source0:	https://archive.xfce.org/src/apps/xfce4-taskmanager/%{url_ver}/%{name}-%{version}.tar.bz2
 BuildRequires:	pkgconfig(exo-2)
 BuildRequires:	pkgconfig(libxfce4ui-2) 
 BuildRequires:	pkgconfig(gtk+-3.0)
@@ -31,7 +31,7 @@ Features:
     - KILL
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
 %configure \
