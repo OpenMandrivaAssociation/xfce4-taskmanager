@@ -47,7 +47,7 @@ Features:
 %find_lang %{name} %{name}.lang
 
 %files -f %{name}.lang
-%doc AUTHORS ChangeLog README*
+%doc AUTHORS README*
 %{_bindir}/*
 %{_datadir}/applications/%{name}.desktop
 %{_iconsdir}/hicolor/scalable/actions/xc_crosshair-symbolic.svg
