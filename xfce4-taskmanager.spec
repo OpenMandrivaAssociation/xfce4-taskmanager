@@ -3,12 +3,13 @@
 
 Summary:	A small taskmanager for Xfce desktop environment
 Name:		xfce4-taskmanager
-Version:	1.5.8
+Version:	1.6.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		https://goodies.xfce.org/projects/applications/xfce4-taskmanager
 Source0:	https://archive.xfce.org/src/apps/xfce4-taskmanager/%{url_ver}/%{name}-%{version}.tar.bz2
+BuildRequires:	meson
 BuildRequires:	pkgconfig(exo-2)
 BuildRequires:	pkgconfig(libxfce4ui-2) 
 BuildRequires:	pkgconfig(gtk+-3.0)
@@ -34,15 +35,14 @@ Features:
 %autosetup -p1
 
 %build
-%configure \
-	--enable-wnck \
-	--enable-gtk3 \
-	--disable-gtk2
+%meson \
+	-Dx11=enabled \
+ 	-Dwnck=enabled
 
-%make_build
+%meson_build
 
 %install
-%make_install
+%meson_install
 
 %find_lang %{name} %{name}.lang
 
